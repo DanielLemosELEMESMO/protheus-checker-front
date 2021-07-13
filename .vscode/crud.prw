@@ -18,7 +18,7 @@ WSRESTFUL SPCliente DESCRIPTION "Clientes API" FORMAT APPLICATION_JSON
 	WSMETHOD POST  customers DESCRIPTION 'SP Lista de Clientes' WSSYNTAX '/api/v1/spcliente' PATH '/api/v1/spcliente'
 
 END WSRESTFUL
-
+//Termina de criar os métodos
 
 
 //-------------------------------------------------------------------

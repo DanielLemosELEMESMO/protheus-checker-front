@@ -13,8 +13,8 @@ WSRESTFUL SPCliente DESCRIPTION "Clientes API" FORMAT APPLICATION_JSON
 
 //Endereco para pegar os dados
 //http://localhost:8090/rest/api/v1/spcliente
-//WSMETHOD GET customers DESCRIPTION 'SP Lista de Clientes' WSSYNTAX '/api/v1/spcliente' PATH '/api/v1/spcliente' TTALK 'V1' PRODUCES APPLICATION_JSON  //-- Retorna lista de clientes, com possibilidade de paginaçao e filtros.
-	WSMETHOD GET  customers DESCRIPTION 'SP Lista de Clientes' WSSYNTAX '/api/v1/spcliente' PATH '/api/v1/spcliente' PRODUCES APPLICATION_JSON  //-- Retorna lista de clientes, com possibilidade de paginaçao e filtros.
+//WSMETHOD GET customers DESCRIPTION 'SP Lista de Clientes' WSSYNTAX '/api/v1/spcliente' PATH '/api/v1/spcliente' TTALK 'V1' PRODUCES APPLICATION_JSON  //-- Retorna lista de clientes, com possibilidade de paginacao e filtros.
+	WSMETHOD GET  customers DESCRIPTION 'SP Lista de Clientes' WSSYNTAX '/api/v1/spcliente' PATH '/api/v1/spcliente' PRODUCES APPLICATION_JSON  //-- Retorna lista de clientes, com possibilidade de paginacao e filtros.
 	WSMETHOD POST  customers DESCRIPTION 'SP Lista de Clientes' WSSYNTAX '/api/v1/spcliente' PATH '/api/v1/spcliente'
 
 END WSRESTFUL
@@ -51,9 +51,8 @@ Retorna a lista de clientes disponíveis.
 
 
 WSMETHOD GET customers WSRECEIVE searchKey, page, pageSize, branch WSREST SPCliente
-
-Local lRet:= .T.
-lRet := Customers( self )
+	Local lRet:= .T.
+	lRet := Customers( self )
 Return( lRet )
 
 
@@ -220,7 +219,7 @@ Static Function Customers( oSelf )
 
 	If ( cAliasSA1 )->( ! Eof() )
 		//-------------------------------------------------------------------
-		// Identifica a quantidade de registro no alias temporário
+		// Identifica a quantidade de registro no alias temporario
 		//-------------------------------------------------------------------
 		COUNT TO nRecord
 		//-------------------------------------------------------------------

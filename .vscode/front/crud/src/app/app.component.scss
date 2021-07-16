@@ -1,0 +1,22 @@
+:host{
+    display: flex;
+    background-color: yellowgreen;
+}
+
+.botoes-atores{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+}
+
+.botao-ator{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.tabela{
+    /*padding-left: 5%;
+    padding-right: 5%;*/
+    width: 100%;
+    padding: 3%;
+}

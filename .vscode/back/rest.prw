@@ -12,6 +12,8 @@
 WSRESTFUL clientes DESCRIPTION "Clientes API" FORMAT APPLICATION_JSON
     WSMETHOD GET DESCRIPTION 'Lista de clientes' WSSYNTAX '/clientes'
     WSMETHOD POST DESCRIPTION 'Inserção de clientes' WSSYNTAX '/clientes'
+	WSMETHOD PUT DESCRIPTION 'Alteracao no registro de clientes' WSSYNTAX '/clientes'
+	WSMETHOD DELETE DESCRIPTION 'Exclusao do registro de clientes' WSSYNTAX '/clientes'
 END WSRESTFUL
 
 //============================================================
@@ -66,11 +68,79 @@ WSMETHOD POST WSREST clientes
 return lRet
 
 
-//PUT
+//=============================================================
+//                                                            =
+//                   ALTERACAO DE CLIENTE(S)                  =
+//                           (PUT)                            =
+//                                                            =
+//=============================================================
 
+WSMETHOD PUT WSREST clientes
+	Local lRet  	:= .T.
+	Local cBody 	:= ""
+	Local oObj  	:= Nil
+	Local aRet
+	Local cErro		:= "Erro ao Deserializar o Body"
+	Local nOpcAuto	:= 4 //PUT - Alteração
 
-//DELETE
+	::setContentType("application/json")
 
+	cBody := ::getContent()
+	lOk := fWJsonDeserialize(cBody, @oObj)
+
+	If lOk
+		aRet := MCliente(self,oObj,nOpcAuto)
+
+		lRet := aRet[1]
+
+		If lRet
+			::setResponse(EncodeUtf8(FwNoAccent(aRet[2], .T.)))
+		Else
+			setRestFault(500, aRet[2])
+		EndIf
+
+	Else
+		::setResponse(EncodeUtf8(FwNoAccent(cErro, .T.)))
+	EndIF
+return .T.
+
+//=============================================================
+//                                                            =
+//                   EXCLUSAO DE CLIENTE(S)                   =
+//                          (DELETE)                          =
+//                                                            =
+//=============================================================
+
+WSMETHOD DELETE WSSERVICE clientes
+
+	Local lRet  	:= .T.
+	Local cBody 	:= ""
+	Local oObj  	:= Nil
+	Local aRet
+	Local cErro		:= "Erro ao Deserializar o Body"
+	Local nOpcAuto	:= 5 //DELETE - Exclusão
+
+	::setContentType("application/json")
+
+	cBody := ::getContent()
+	lOk := fWJsonDeserialize(cBody, @oObj)
+
+	If lOk
+		aRet := MCliente(self,oObj,nOpcAuto)
+
+		lRet := aRet[1]
+
+		If lRet
+			::setResponse(EncodeUtf8(FwNoAccent(aRet[2], .T.)))
+		Else
+			setRestFault(500, aRet[2])
+		EndIf
+
+	Else
+		::setResponse(EncodeUtf8(FwNoAccent(cErro, .T.)))
+	EndIF
+
+Return lRet
 
 //============================================================
 //                                                           =
@@ -108,14 +178,14 @@ Static Function ConsultaClientes( oSelf )
         aAdd(aListaDeClientes, JsonObject():New())
 
 
-        aListaDeClientes[nCount]['cod'] := (ctabela)-> A1_COD
-        aListaDeClientes[nCount]['loja'] := (ctabela)-> A1_LOJA
-        aListaDeClientes[nCount]['nome'] := Alltrim( EncodeUTF8( ( ctabela )->A1_NOME ) )
-        aListaDeClientes[nCount]['end'] := Alltrim( EncodeUTF8( (ctabela)-> A1_END) )
-        aListaDeClientes[nCount]['nreduz'] := Alltrim( EncodeUTF8((ctabela)-> A1_NREDUZ) )
-        aListaDeClientes[nCount]['tipo'] := (ctabela)-> A1_TIPO
-        aListaDeClientes[nCount]['est'] := (ctabela)-> A1_EST
-        aListaDeClientes[nCount]['mun'] := Alltrim( EncodeUTF8((ctabela)-> A1_MUN) )
+        aListaDeClientes[nCount]['cod'] 	:= (ctabela)-> A1_COD
+        aListaDeClientes[nCount]['loja'] 	:= (ctabela)-> A1_LOJA
+        aListaDeClientes[nCount]['nome'] 	:= Alltrim( EncodeUTF8( ( ctabela )->A1_NOME ) )
+        aListaDeClientes[nCount]['end'] 	:= Alltrim( EncodeUTF8( (ctabela)-> A1_END) )
+        aListaDeClientes[nCount]['nreduz'] 	:= Alltrim( EncodeUTF8((ctabela)-> A1_NREDUZ) )
+        aListaDeClientes[nCount]['tipo'] 	:= (ctabela)-> A1_TIPO
+        aListaDeClientes[nCount]['est']		:= (ctabela)-> A1_EST
+        aListaDeClientes[nCount]['mun']		:= Alltrim( EncodeUTF8((ctabela)-> A1_MUN) )
 
         /*conout("Cod: " + (ctabela)-> A1_COD)
         conout("Loja: " + (ctabela)-> A1_LOJA)
@@ -160,7 +230,7 @@ Static Function MCliente(oSelf,oObj,nOpcAuto)
 
 		Conout("Abertura do ambiente em rotinas automáticas - OK")
 
-		aStData := ClassDataArr(oObj:Data)
+		aStData := ClassDataArr(oObj)
 		For i := 1 To Len(aStData)
 			aAdd(aSA1Auto, {aStData[i,1], aStData[i,2], Nil})
 		Next i

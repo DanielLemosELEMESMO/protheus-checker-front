@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { AppProvider } from '../app.provider';
 
 @Component({
   selector: 'app-botao-ator',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BotaoAtorComponent implements OnInit {
 
-  constructor() { }
+  @Input()acao:string=""
+  constructor(private provider:AppProvider) { }
 
   ngOnInit(): void {
   }
 
+  public async chamada(){
+    
+  }
+  
 }

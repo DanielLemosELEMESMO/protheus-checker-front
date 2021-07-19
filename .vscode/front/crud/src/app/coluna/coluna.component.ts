@@ -8,6 +8,7 @@ import { Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 export class ColunaComponent implements OnInit {
 
   @Input()public coluna:string = "vazio"
+  @Input()public top:boolean=false
 
   constructor() { }
 

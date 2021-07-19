@@ -1,22 +1,41 @@
 :host{
     display: flex;
-    background-color: yellowgreen;
 }
 
 .botoes-atores{
     display: flex;
-    flex-direction: column;
-    justify-content:center;
+    flex-direction: row;
+    justify-content: center;
 }
 
-.botao-ator{
-    padding-left: 5px;
-    padding-right: 5px;
-}
+/*.botao-ator{
+    padding-left: 100%;
+}*/
 
 .tabela{
     /*padding-left: 5%;
     padding-right: 5%;*/
+    width: 90%;
+    padding-top: 1%;
+    padding-left: 5%;
+}
+
+.atores{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-left: 6%;
     width: 100%;
-    padding: 3%;
+}
+
+.seletor{
+    padding-top: 1%;
+    padding-left: 5%;
+    width: 15%;
+}
+
+.tabela-e-atores{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }

@@ -1,1 +1,3 @@
-<p>{{coluna}}</p>
+<ng-container *ngIf="!top">{{coluna}}</ng-container>
+
+<ng-container *ngIf="top">{{coluna}}</ng-container>

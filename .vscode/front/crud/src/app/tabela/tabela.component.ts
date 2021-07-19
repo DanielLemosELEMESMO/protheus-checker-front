@@ -1,24 +1,17 @@
 import { Component, OnInit } from '@angular/core';
+import { AppProvider } from '../app.provider';
+import { camposRegistro } from '../registro/registro.model';
 
-export interface registro {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
+export interface camposcliente{
+  codigo:string;
+  loja:string;
+  nome:string;
+  nreduz:string;
+  tipo:string;
+  est:string;
+  mun:string;
+  end:string;
 }
-
-const colunas:registro[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
-];
 
 @Component({
   selector: 'app-tabela',
@@ -28,13 +21,24 @@ const colunas:registro[] = [
 
 export class TabelaComponent implements OnInit {
   
-  //colunas:string[] = ['codigo', 'loja', 'nome', 'estado', 'endereco']
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = colunas;
+  colunas:camposRegistro[]=[
+    {field:'cod', value:'codigo', enabled:true},
+    {field:'loja', value:'loja', enabled:true},
+    {field:'nome', value:'nome', enabled:true},
+    {field:'nreduz', value:'nreduz', enabled:false},
+    {field:'tipo', value:'X', enabled:false},
+    {field:'est', value:'estado', enabled:true},
+    {field:'mun', value:'municipio', enabled:true},
+    {field:'end', value:'endereço', enabled:true},
+  ]
 
-  constructor() { }
+  constructor(private provider:AppProvider) { }
 
-  ngOnInit(): void {
+  public async ngOnInit() {
+    const res:any = await this.provider.getClientes()
+    this.colunas.map((col)=>{
+      col.value = res.clientes
+    })
   }
 
   evento(para:any){

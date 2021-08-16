@@ -1,0 +1,43 @@
+<div class="container-login">
+    <div class="container">
+        <form class="form">
+            <h1>LOGIN</h1>
+            <mat-form-field class="full-width" appearance="standard">
+                <mat-label>E-mail</mat-label>
+                
+                <input
+                [(ngModel)]="user.email"
+                name="email"
+                
+                matInput
+                [formControl]="email"
+                placeholder="exemplo@dominio.com"
+                required>
+                
+                <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>
+            
+            <mat-form-field class="full-width" appearance="standard">
+                <mat-label>Senha</mat-label>
+                
+                <input
+                [(ngModel)]="user.password"
+                name="password"
+                
+                matInput
+                [type]="hidepassword ? 'password' : 'text'"
+                required>
+                
+                <button type="button" mat-icon-button matSuffix (click)="hidepassword = !hidepassword" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hidepassword">
+                <mat-icon>{{hidepassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </mat-form-field>
+        <app-botao [texto]="'ENTRAR'" (click)="login()"></app-botao>
+        </form>
+        
+        <div class="signin">
+            <p>Não possui uma conta? <a routerLink="/auth/register" routerLinkActive="active">Cadastre-se</a></p>
+        </div>
+    </div>
+</div>

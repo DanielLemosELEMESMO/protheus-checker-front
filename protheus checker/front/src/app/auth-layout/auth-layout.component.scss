@@ -1,0 +1,30 @@
+.background{
+    height: 100vh;
+    /*background-image:   url("./../../assets/graphic-element-totvs-trem-azul.svg"),
+                        url("./../../assets/graphic-element-totvs-trem-azul.svg");
+    background-repeat: no-repeat, no-repeat;
+    
+    @media (max-width:1920px) {
+        background-size: 770px, 770px;
+        background-position: -116px -225px, 1250px 522px;
+        background-attachment:fixed, fixed;
+        background-color: red;
+        @media (max-width:1440px) {
+            background-size: 620px, 620px;
+            background-position: -180px -180px, 650px 280px;
+            background-attachment:fixed, fixed;
+            background-color: white;        
+        }
+    }*/
+    background-image:   url("./../../assets/graphic-element-totvs-trem-azul.svg"),
+                        url("./../../assets/graphic-element-totvs-trem-azul.svg");
+    background-repeat: no-repeat, no-repeat;
+    background-size: 45vw, 45vw;
+    background-position: right 65vw top -15vh, right -7vw bottom -20vh;
+    background-attachment:fixed, fixed;
+    background-color: white;
+}
+
+.logo{
+    margin: 0 0 0 64px;
+}

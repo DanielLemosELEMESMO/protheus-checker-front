@@ -1,0 +1,72 @@
+<div class="container"> 
+    <table  mat-table [dataSource]="dataSource">
+        
+        <!-- cnpj Column -->
+        <ng-container matColumnDef="cnpj">
+            <th class="head" mat-header-cell *matHeaderCellDef> CNPJ </th>
+            <td mat-cell *matCellDef="let element"> {{element.cnpj}} </td>
+        </ng-container>
+
+        <!-- corporate_name Column -->
+        <ng-container matColumnDef="corporate_name">
+            <th class="head" mat-header-cell *matHeaderCellDef> RAZÃO SOCIAL </th>
+            <td mat-cell *matCellDef="let element"> {{element.corporate_name}} </td>
+        </ng-container>
+
+        <!-- email Column -->
+        <ng-container matColumnDef="email">
+            <th class="head" mat-header-cell *matHeaderCellDef> E-MAIL </th>
+            <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+        </ng-container>
+
+        <!-- frequency Column -->
+        <ng-container matColumnDef="frequency">
+            <th class="head" mat-header-cell *matHeaderCellDef> FREQUÊNCIA </th>
+            <td mat-cell *matCellDef="let element"> {{element.frequency}} </td>
+        </ng-container>
+
+        <!-- query_sql Column -->
+        <ng-container matColumnDef="query_sql">
+            <th class="head" mat-header-cell *matHeaderCellDef> SQL </th>
+            <td mat-cell *matCellDef="let element"> {{element.query_sql}} </td>
+        </ng-container>
+
+        <!-- last_verification Column -->
+        <ng-container matColumnDef="last_verification">
+            <th class="head" mat-header-cell *matHeaderCellDef> ÚLTIMA </th>
+            <td mat-cell *matCellDef="let element"> {{element.last_verification}} </td>
+        </ng-container>
+
+        <!-- next_verification Column -->
+        <ng-container matColumnDef="next_verification">
+            <th class="head" mat-header-cell *matHeaderCellDef> PRÓXIMA </th>
+            <td mat-cell *matCellDef="let element"> {{element.next_verification}} </td>
+        </ng-container>
+
+        <!-- actions Column -->
+        <ng-container matColumnDef="actions">
+            <th class="head" mat-header-cell *matHeaderCellDef> ACTIONS </th>
+            <td mat-cell *matCellDef="let element" class="action-buttons">
+                <button mat-fab class="edit-button" (click)="openEditor('edit', element)">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-fab class="delete-button" (click)="deletaRegistro(element.id)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>
+
+<div class="novoCad">
+    <button  (click)="openEditor('create')" mat-flat-button>inserir novo cadastro +</button>
+</div>
+
+<div class="edit-modal-container1" *ngIf="showModal">
+    <div class="edit-modal-container2">
+        <app-input-modal [mode]="toDo" [register]="editing" (editVerificationEvent)="atualizaOuCria($event)" (closeEvent)="closeEditor($event)" class="edit-modal"></app-input-modal>
+    </div>
+</div>

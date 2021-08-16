@@ -1,0 +1,41 @@
+.container-login{
+    width: 100%;
+    justify-content: center;
+    position: fixed;
+}
+
+.container{
+    margin: 0 auto;
+    padding-top: 60px;
+    width: 312px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.botoesNav{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    width: 312px;
+}
+
+a {
+    color: #0897e9;
+    text-decoration: none;
+}
+
+.signin {
+    transition: all;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.logo{
+    margin: 0 0 0 64px;
+}

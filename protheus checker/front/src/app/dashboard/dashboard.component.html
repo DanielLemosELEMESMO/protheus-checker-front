@@ -1,0 +1,21 @@
+<div class="dashboard">
+    <mat-card class="menu">
+        <div class="botoes">
+            <button (click)="goHome()" [ngStyle]="{'background-color': ((router.url === '/dashboard/home') ? 'white' : null), 'color': (router.url === '/dashboard/home') ? '#0897e9' : null}" mat-fab class="botao" >
+                <mat-icon class="material-icons-round">home</mat-icon>
+            </button>
+        
+            <button (click)="goTable()" [ngStyle]="{'background-color': ((router.url === '/dashboard/table') ? 'white' : null), 'color': (router.url === '/dashboard/table') ? '#0897e9' : null}" mat-fab class="botao">
+                <mat-icon class="material-icons-round">table_rows</mat-icon>
+            </button>
+        </div>
+        <div class="botoesDeBaixo">
+            <button (click)="doLogout()" [ngStyle]="{'background-color': ((saindo) ? 'white' : null), 'color': (saindo) ? '#0897e9' : null}" mat-fab id="mirror" class="botao">
+                <mat-icon style="right: 18px;" class="material-icons-round">logout</mat-icon>
+            </button>
+        </div>
+    </mat-card>
+    <div class="container">
+        <router-outlet></router-outlet>
+    </div>
+</div>

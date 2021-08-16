@@ -1,0 +1,35 @@
+<button *ngIf="tipo=='normal'"
+    mat-button
+    class="botao"
+    [ngStyle]="{
+        width:width,
+        color:color,
+        'font-size':fsize,
+        'border-radius': bradius,
+        'background-color':bcolor,
+        'padding-bottom':pbottom,
+        'padding-top':ptop, height:height}"
+        >
+        
+        {{texto}}
+        
+    </button>
+    
+    <button *ngIf="tipo=='stroked'"
+    mat-stroked-button
+    class="botao"
+    [ngStyle]="{
+        width:width,
+        color:color,
+        'border-width':bwidth,
+        'border-color':borderColor,
+        'font-size':fsize,
+        'border-radius': bradius,
+        'background-color':bcolor,
+        'padding-bottom':pbottom,
+        'padding-top':ptop, height:height}"
+    >
+
+    {{texto}}
+
+</button>

@@ -1,0 +1,86 @@
+<div class="container">
+    <div class="inputs">
+        <form class="form">
+            <mat-form-field appearance="outline">
+                <mat-label>E-mails</mat-label>
+                <input
+                    [(ngModel)]="this.verification.email"
+                    name="email"
+
+                    matInput
+                    required
+                >
+            </mat-form-field>
+
+            <div class="column-container">
+                <div class="short-inputs">
+                    <mat-form-field appearance="outline">
+                        <mat-label>CNPJ</mat-label>
+                        <input
+                            [(ngModel)]="this.verification.cnpj"
+                            name="cnpj"
+
+                            matInput
+                            required>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Razão Social</mat-label>
+                        <input
+                            [(ngModel)]="this.verification.corporate_name"
+                            name="corporate_name"
+
+                            matInput
+                            required>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Frequência</mat-label>
+                        <input
+                            [(ngModel)]="this.verification.frequency"
+                            name="frequency"
+
+                            matInput
+                            required
+                        >
+                    </mat-form-field>
+                </div>
+            
+                <mat-form-field class="description" appearance="outline">
+                    <mat-label>Descrição</mat-label>
+                    <input
+                        [(ngModel)]="this.verification.description"
+                        name="description"
+
+                        matInput
+                        required
+                    >
+                </mat-form-field>
+            </div>
+
+            <div class="botoes"
+                [ngStyle]="{display:buttonsDisplay, 'flex-direction':buttonsFlex}"
+                >
+                <app-botao
+                    *ngIf="this.botoes.includes('save')"
+                    type="button"
+                    (click)="save()"
+
+                    [texto]="botoesTextos[0]"
+                    [width]="'205px'"
+                    [height]="'55px'"
+                    [fsize]="'24px'"></app-botao>
+                <app-botao
+                    *ngIf="this.botoes.includes('close')"
+                    type="button"
+                    (click)="close()"
+                    [texto]="botoesTextos[1]"
+                    [width]="'205px'"
+                    [height]="'55px'"
+                    [bcolor]="'transparent'"
+                    [color]="'#363636'"
+                    [fsize]="'24px'"></app-botao>
+            </div>
+        </form>
+    </div>
+</div>

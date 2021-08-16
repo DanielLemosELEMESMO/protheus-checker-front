@@ -1,0 +1,12 @@
+<div [ngStyle]="{width:width, height:height}" class="container">
+    <mat-form-field appearance="outline">
+        <textarea
+            [(ngModel)]="this.editing.query_sql"
+            name="query_sql"
+
+            (keypress)="setCurrentWord($event)"
+            [ngStyle]="{width:width, height:height, 'max-height':height}"
+            matInput
+        ></textarea>
+    </mat-form-field>
+</div>

@@ -1,0 +1,85 @@
+// /*PRIMARY*/
+// $grey: #363636;
+// $blue: #0897e9;
+
+// /*SECONDARY*/
+// $yellow:   #feac0e;
+// $lightgrey:#eeeeee;
+
+// /*COMPLEMENTARY*/
+// $aqua:  #0adbe3;
+// $lilac:	#6b48ff;
+
+$totvs-blue: (
+ 50:  #e1f4ff,
+ 100: #b3e3fe,
+ 200: #80d2fd,
+ 300: #4bc0fb,
+ 400: #24b2fb,
+ 500: #01a4f8,
+ 600: #0897e9,
+ 700: #0d84d5,
+ 800: #0c73c0,
+ 900: #0d529e,
+ A100:#adeff5,
+ A200:#71e5ef,
+ A300:#08d9e9,
+ A400:#00d0e4
+
+ // ... continues to 900
+ contrast: (
+   50: rgba(black, 0.87),
+   100: rgba(black, 0.87),
+   200: rgba(black, 0.87),
+   300: white,
+   // ... continues to 900
+ )
+);
+
+$totvs-yellow: (
+ 50:  #fff7e1,
+ 100: #ffeab3,
+ 200: #ffdd82,
+ 300: #ffd150,
+ 400: #ffc52b,
+ 500: #febc12,
+ 600: #feac0e,
+ 700: #fd9b0f,
+ 800: #fd8a0f,
+ 900: #fc6b10,
+ A100:#ffde38,
+ A200:#ffc833,
+ A300:#ffaf2b,
+ A400:#ff861d
+
+ // ... continues to 900
+ contrast: (
+   50: rgba(black, 0.87),
+   100: rgba(black, 0.87),
+   200: rgba(black, 0.87),
+   300: white,
+   // ... continues to 900
+ )
+);
+
+$totvs-grey: (
+ 50:  #f8f8f8,
+ 100: #f0f0f0,
+ 200: #e5e5e5,
+ 300: #d4d4d4,
+ 400: #b0b0b0,
+ 500: #8f8f8f,
+ 600: #676767,
+ 700: #545454,
+ 800: #363636,
+ 900: #161616,
+
+ // ... continues to 900
+ contrast: (
+   50: rgba(black, 0.87),
+   100: rgba(black, 0.87),
+   200: rgba(black, 0.87),
+   300: white,
+   // ... continues to 900
+ )
+);

@@ -1,0 +1,19 @@
+.form{
+    display: flex;
+    flex-direction: column;
+}
+.column-container{
+    display: flex;
+    justify-content: space-between;
+    .short-inputs{
+        display: flex;
+        flex-direction: column;
+        width: 350px;
+    }
+    .description{
+        width: 350px;
+        input{
+            height: 172px;
+        }
+    }
+}

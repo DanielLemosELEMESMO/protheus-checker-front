@@ -1,0 +1,69 @@
+<div class="modal">
+    <mat-card class="card">
+        <div class="left-column">
+            <div class="options">
+                <span (click)="option = 'dadosCliente'">
+                    <h3 [ngClass]="{'dashed': (option=='dadosCliente')}">Dados do cliente</h3>
+                </span>
+                <span (click)="option = 'consulta'">
+                    <h3 [ngClass]="{'dashed': (option=='consulta')}">Consulta SQL</h3>
+                </span>
+            </div>
+        </div>
+        <div class="right-column">
+            <div *ngIf="option=='dadosCliente'" class="inputs">
+                <h1 class="titulo-modal">{{tituloModal}}</h1>
+                <app-inputs-verification *ngIf="mode == 'edit'"     [verification]="register" (verificationEvent)="salvar($event)" (closeEvent)="close()"></app-inputs-verification>
+                <app-inputs-verification *ngIf="mode == 'create'"   [verification]="register" (verificationEvent)="salvar($event)" (closeEvent)="close()" [botoesTextos]="['Salvar', 'Cancelar']"></app-inputs-verification>
+                <!-- <form class="form">
+                    <mat-form-field appearance="outline">
+                        <mat-label>E-mail</mat-label>
+                        <input
+                            [(ngModel)]="this.editing.email"
+                            name="email"
+
+                            matInput
+                            required>
+                    </mat-form-field>
+                    
+                    <mat-form-field appearance="outline">
+                        <mat-label>CNPJ</mat-label>
+                        <input
+                            [(ngModel)]="this.editing.cnpj"
+                            name="cnpj"
+
+                            matInput
+                            required>
+                    </mat-form-field>
+        
+                    <mat-form-field appearance="outline">
+                        <mat-label>Razão Social</mat-label>
+                        <input
+                            [(ngModel)]="this.editing.corporate_name"
+                            name="corporate_name"
+
+                            matInput
+                            required>
+                    </mat-form-field>
+        
+                    <mat-form-field appearance="outline">
+                        <mat-label>Frequência</mat-label>
+                        <input
+                            [(ngModel)]="this.editing.frequency"
+                            name="frequency"
+
+                            matInput
+                            required>
+                    </mat-form-field>
+                    <div class="botoes">
+                        <app-botao type="button" (click)="salvar()" [texto]="'Salvar'" [width]="'205px'" [height]="'55px'" [fsize]="'24px'"></app-botao>
+                        <app-botao type="button" (click)="close()" [texto]="'Fechar'" [width]="'205px'" [height]="'55px'" [bcolor]="'transparent'" [color]="'#363636'" [fsize]="'24px'"></app-botao>
+                    </div>
+                </form> -->
+            </div>
+            <div *ngIf="option=='consulta'" class="sql">
+                <app-ide-sql [editing]="register"></app-ide-sql>
+            </div>
+        </div>
+    </mat-card>
+</div>

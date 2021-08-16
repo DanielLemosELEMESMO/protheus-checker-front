@@ -1,0 +1,74 @@
+<div class="register">
+    <div class="container">
+        <div class="form">
+
+            <h1 class="titulo">Cadastre o cliente que você deseja verificar</h1>
+
+            <form class="campos">
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>E-mail</mat-label>
+                    <input
+                    [(ngModel)]="this.verification.email"
+                    name="email"
+                    
+                    matInput
+                    placeholder="exemplo@dominio.com"
+                    required>
+                </mat-form-field>
+
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>CNPJ</mat-label>
+                    
+                    <input
+                    [(ngModel)]="this.verification.cnpj"
+                    name="cnpj"
+                    
+                    matInput
+                    placeholder="00.000.000/0000-00"
+                    required>
+
+                </mat-form-field>
+                
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Razão Social</mat-label>
+                    
+                    <input
+                    [(ngModel)]="this.verification.corporate_name"
+                    name="corporate_name"
+                    
+                    matInput
+                    required>
+
+                </mat-form-field>
+                
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Frequência (em minutos)</mat-label>
+                    
+                    <input
+                    [(ngModel)]="this.verification.frequency"
+                    name="frequency"
+                    
+                    matInput
+                    required>
+                    
+                </mat-form-field>
+                
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>SQL</mat-label>
+                    
+                    <textarea
+                        [(ngModel)]="this.verification.query_sql"
+                        name="query_sql"
+
+                        style="height: 100px;"
+                        matInput
+                        placeholder="Seu código SQL"
+                        required>
+                    </textarea>
+
+                </mat-form-field>
+                <app-botao type="button" class="submit-button" [texto]="'Enviar'" [pbottom]="'0px'" [ptop]="'0px'" (click)="sendVerification()"></app-botao>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,81 @@
+<div class="container">
+    <form class="form">
+        <h1>CADASTRO</h1>
+        <div *ngIf="etapaAtual == 1" class="etapa1">
+            <mat-form-field class="full-width" appearance="standard">
+                <mat-label>E-mail</mat-label>
+
+                <input
+                name="email"
+                [(ngModel)]="user.email"
+
+                matInput
+                [formControl]="email"
+                placeholder="exemplo@dominio.com"
+                required>
+
+                <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="full-width" appearance="standard">
+                <mat-label>Nome completo</mat-label>
+                <input
+                [(ngModel)]="user.name"
+                name="name"
+
+                matInput
+                required>
+            </mat-form-field>
+        </div>
+
+        <div *ngIf="etapaAtual == 2" class="etapa2">
+            <mat-form-field class="full-width" appearance="standard">
+                <mat-label>Senha</mat-label>
+
+                <input
+                [(ngModel)]="user.password"
+                name="password"
+
+                matInput
+                [type]="hidepassword1 ? 'password' : 'text'"
+                required>
+
+                <button type="button" mat-icon-button matSuffix (click)="hidepassword1 = !hidepassword1" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidepassword1">
+                    <mat-icon>{{hidepassword1 ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+
+            <mat-form-field class="full-width" appearance="standard">
+                <mat-label>Confirmar Senha</mat-label>
+                
+                <input
+                [(ngModel)]="password_confirmation"
+                name="password_confirmation"
+
+                matInput
+                [type]="hidepassword2 ? 'password' : 'text'"
+                required>
+
+                <button type="button" mat-icon-button matSuffix (click)="hidepassword2 = !hidepassword2" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidepassword2">
+                    <mat-icon>{{hidepassword2 ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+        </div>
+
+        <div class="first-step" *ngIf="etapaAtual == 1">
+            <app-botao (click)="nextStep()" [texto]="'CONTINUAR'" [width]="'100%'"></app-botao>
+        </div>
+        
+        <div class="last-step" class="botoesNav" *ngIf='etapaAtual == etapaFinal'>
+            <app-botao (click)="register()" [texto]="'CRIAR CONTA'" [bradius]="'0 6px 6px 0'" [width]="'155px'" (click)="enviaForm()"></app-botao>
+            <app-botao (click)="lastStep()" [texto]="'VOLTAR'" [bradius]="'6px 0 0 6px'" [width]="'155px'"></app-botao>
+        </div>
+
+        <div class="signin" *ngIf="etapaAtual==1">
+            <p>Já possui uma conta? <a routerLink="/auth/login" routerLinkActive="active">Faça login</a></p>
+        </div>
+    </form>
+    
+
+</div>
+

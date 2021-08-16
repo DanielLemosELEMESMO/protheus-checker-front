@@ -1,0 +1,142 @@
+mat-card {
+    width: 200px;
+}
+table {
+    width: 100%;
+}
+
+:host{
+    /* width */
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+    
+    /* Track */
+    ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 10px rgb(221, 221, 221);
+        border-radius: 10px;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: grey; 
+        border-radius: 10px;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #636363;
+    }
+}
+
+.edit-modal-container1::before{
+    content: "";
+    position: absolute;
+    width: 100%; height: 100%;
+    background-color: rgba(100, 100, 100, 0.4);
+}
+
+.edit-modal-container1{
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%; height: 100%;
+    transform: translate(-50%, -50%);
+    justify-content: center;
+    .edit-modal-container2{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .edit-modal{
+        width: 1058px;
+        height: 655px;
+    }
+}
+.container{
+    max-height: 85vh;
+    overflow: auto;
+    
+}
+.head{
+    font-weight: 900;
+    color: #363636;
+    font-size: small;
+}
+.mat-column-email{
+    white-space: nowrap;
+    max-width: 280px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 35px;
+}
+.mat-column-cnpj{
+    white-space: nowrap;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 35px;
+}
+.mat-column-corporate_name{
+    white-space: nowrap;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 35px;
+}
+.mat-column-query_sql{
+    white-space: nowrap;
+    max-width: 230px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 35px;
+}
+.mat-column-frequency{
+    white-space: nowrap;
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 35px;
+}
+.mat-column-last_verification{
+    white-space: nowrap;
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 35px;
+}
+.mat-column-next_verification{
+    white-space: nowrap;
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 35px;
+}
+.mat-column-actions{
+    white-space: nowrap;
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 35px;
+}
+.novoCad{
+    display: flex;
+    margin: 10px;
+    justify-content: center;
+}
+td{
+    padding: 0px;
+}
+.action-buttons{
+    button{
+        box-shadow: none;
+        background-color: transparent;
+    }
+    .edit-button{
+        color: #363636;
+    }
+    .delete-button{
+        color: #FF6348;
+    }
+}

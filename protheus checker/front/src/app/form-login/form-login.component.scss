@@ -1,0 +1,44 @@
+.container-login{
+    width: 100%;
+    justify-content: center;
+    position: fixed;
+}
+
+.container{
+    margin: 0 auto;
+    padding-top: 60px;
+    width: 312px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.botaoDeContinuar {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 7px;
+    padding-top: 7px;
+    border-radius: 6px;
+    background-color: #0897e9;
+    color: #ffffff;
+    width: 312px;
+}
+
+a {
+    color: #0897e9;
+    text-decoration: none;
+}
+
+.signin {
+    margin-top: 10px;
+    text-align: center;
+}
+
+:host{
+    background-color: bisque;
+}

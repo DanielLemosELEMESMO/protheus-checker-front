@@ -1,0 +1,20 @@
+<div class="warn-container1">
+    <div class="modal-container2">
+        <mat-card class="modal">
+            <mat-card-header>
+                <mat-card-title>{{titulo}}</mat-card-title>
+            </mat-card-header>
+            <img class="image" *ngIf="type=='delete'" mat-card-image src='./../../../assets/undraw_Throw_away.svg'>
+            <img class="image" *ngIf="type=='update'" mat-card-image src='./../../../assets/success-on-sending-verification.svg'>
+
+            <mat-card-actions class="reverse" *ngIf="type=='delete'">
+                <button mat-button (click)="sendAction(true)" class="orange-background">Sim</button>
+                <button mat-button (click)="sendAction(false)" class="no-background">Não</button>
+            </mat-card-actions>
+            <mat-card-actions class="reverse" *ngIf="type=='update'">
+                <button mat-button (click)="sendAction('continuar')" id="medium-size" class="green-background" >Continuar</button>
+                <button mat-button (click)="sendAction('fechar')" id="medium-size" class="no-background">Fechar</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>

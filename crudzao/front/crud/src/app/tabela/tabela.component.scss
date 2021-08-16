@@ -1,0 +1,15 @@
+mat-card{
+    background-color: whitesmoke;
+    margin-inline: 50px;
+    height: 620px;
+    max-height: 610px;
+    overflow: hidden;
+}
+.colunas{
+    margin: 10px 0 0 0;
+}
+
+.registros{
+    max-height: 580px;
+    overflow: auto;
+}

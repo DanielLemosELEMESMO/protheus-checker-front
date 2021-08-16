@@ -1,0 +1,32 @@
+:host{
+    display: flex;
+    align-self: center;
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-self: center;
+    margin: 0;
+}
+
+.tabela{
+    margin-top: 20px;
+}
+
+.atores{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.botoes-atores{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.seletor{
+    padding-top: 20px;
+    //width: 15%;
+}

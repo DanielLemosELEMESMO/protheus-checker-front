@@ -1,0 +1,5 @@
+<mat-card (click)="acao()" [ngClass]="this.isSelected ? 'selected-class' : 'unselected-class'">
+    <ng-container *ngFor="let coluna of aCampos">
+        <app-coluna *ngIf="coluna.enabled" [coluna]="coluna.value" class={{coluna.field}}></app-coluna>
+    </ng-container>
+</mat-card>

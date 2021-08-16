@@ -1,0 +1,72 @@
+:host{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin: 10px 0px 0px 0px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.cod{
+    //background-color: red;
+    width: 45px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 0px;
+}
+
+.loja{
+    //background-color: pink;
+    width: 45px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 0px;
+}
+
+.nome{
+    //background-color: purple;
+    width: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 0px;
+}
+
+.est{
+    //background-color: orange;
+    width: 45px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 0px;
+}
+
+.mun{
+    //background-color: green;
+    width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 0px;
+}
+
+.end{
+    //background-color: red;
+    width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 0px;
+}
+
+.tipo{
+    //background-color: red;
+    width: 45px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 0px;
+}
+
+.nreduz{
+    //background-color: red;
+    width: 45px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 0px;
+}

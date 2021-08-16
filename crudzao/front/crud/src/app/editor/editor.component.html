@@ -1,0 +1,50 @@
+<mat-card>
+    <h1>Novo Cliente</h1>
+    
+    <form class="form">
+        <mat-form-field class="campo" style="width: 100px;" appearance="standard">
+            <mat-label>Código</mat-label>
+            <input matInput placeholder="Ex. 123456">
+        </mat-form-field>
+        
+        <mat-form-field class="campo" style="width: 50px;" appearance="standard">
+            <mat-label>Loja</mat-label>
+            <input matInput placeholder="Ex. 02">
+        </mat-form-field>
+        
+        <mat-form-field class="campo" appearance="standard">
+            <mat-label>Nome</mat-label>
+            <input matInput>
+        </mat-form-field>
+        
+        <mat-form-field class="campo" appearance="standard">
+            <mat-label>Nome Fantasia</mat-label>
+            <input matInput placeholder="Nome reduzido">
+        </mat-form-field>
+        
+        <mat-form-field class="campo" style="width: 50px;" appearance="standard">
+            <mat-label>Tipo</mat-label>
+            <input matInput placeholder="J, F...">
+        </mat-form-field>
+        
+        <mat-form-field class="campo" style="width: 50px;" appearance="standard">
+            <mat-label>Estado</mat-label>
+            <input matInput placeholder="Ex. ES">
+        </mat-form-field>
+        
+        <mat-form-field class="campo" appearance="standard">
+            <mat-label>Município</mat-label>
+            <input matInput placeholder="Nome da Cidade">
+        </mat-form-field>
+        
+        <mat-form-field class="campo" appearance="standard">
+            <mat-label>Endereço</mat-label>
+            <input matInput>
+        </mat-form-field>
+    </form>
+    
+    <div>
+        <button mat-button (click)="fechar()">Cancelar</button>
+        <button mat-button>Salvar</button>
+    </div>
+</mat-card>

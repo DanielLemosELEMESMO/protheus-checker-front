@@ -1,0 +1,5 @@
+<button mat-fab color="warn" (click)="agir()"><mat-icon>{{acao}}</mat-icon></button>
+
+<ng-container *ngIf="acao=='add' && agindo">
+    <app-editor></app-editor>
+</ng-container>

@@ -1,0 +1,88 @@
+mat-card{
+    background-color:white;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin: 0px 0px 10px 0px;
+}
+
+.unselected-class{
+    background-color: white;
+}
+
+.selected-class{
+    background-color: rgb(207, 207, 207);
+}
+
+.cod{
+    white-space: nowrap;
+    //background-color: red;
+    width: 45px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 0px;
+}
+
+.loja{
+    white-space: nowrap;
+    //background-color: pink;
+    width: 45px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 0px;
+}
+
+.nome{
+    white-space: nowrap;
+    //background-color: purple;
+    width: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 0px;
+}
+
+.est{
+    white-space: nowrap;
+    //background-color: orange;
+    width: 45px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 0px;
+}
+
+.mun{
+    white-space: nowrap;
+    //background-color: green;
+    width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 0px;
+}
+
+.end{
+    white-space: nowrap;
+    //background-color: red;
+    width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 0px;
+}
+
+.tipo{
+    white-space: nowrap;
+    //background-color: red;
+    width: 45px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 0px;
+}
+
+.nreduz{
+    white-space: nowrap;
+    //background-color: red;
+    width: 45px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 0px;
+}
+

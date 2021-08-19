@@ -1,0 +1,34 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "totvs_language_debug",
+			"request": "launch",
+			"name": "TOTVS Language Debug",
+			"program": "${command:AskForProgramName}",
+			"cwb": "${workspaceFolder}",
+			"smartclientBin": "C:/TOTVS/Protheus/Protheus/bin/smartclient/smartclient.exe",
+			"isMultiSession": true,
+			"enableTableSync": true
+		}
+	],
+	"lastPrograms": [
+		{
+			"label": "U_sumTime",
+			"description": "<nil>"
+		},
+		{
+			"args": [
+				"2",
+				"3"
+			],
+			"label": "U_sumTime",
+			"description": "2,3"
+		},
+		{
+			"label": "U_verify",
+			"description": "<nil>"
+		}
+	],
+	"lastProgramExecuted": "U_verify"
+}
